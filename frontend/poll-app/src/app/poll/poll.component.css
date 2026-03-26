@@ -1,0 +1,27 @@
+/* Card styling */
+.poll-card {
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.poll-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Option buttons */
+.option-btn {
+    border-radius: 10px;
+    padding: 10px 15px;
+    transition: all 0.2s ease;
+}
+
+.option-btn:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.option-btn:hover .badge {
+    background-color: white !important;
+    color: #0d6efd !important;
+}

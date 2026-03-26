@@ -1,0 +1,63 @@
+<div class="container py-5 mt-4">
+  <h2 class="text-center fw-bold mb-5 text-primary">Create Poll</h2>
+  <div class="mb-4">
+    <input
+      [(ngModel)]="newPoll.questions"
+      placeholder="Enter poll question..."
+      class="form-control"
+      required
+    />
+  </div>
+  <div class="option-container mb-4">
+    <div
+      *ngFor="let option of newPoll.options; let i = index; trackBy: trackByIndex"
+      class="input-group mb-2"
+    >
+      <input
+        [(ngModel)]="option.optionText"
+        placeholder="Enter option..."
+        class="form-control"
+        required
+      />
+      <button
+        *ngIf="newPoll.options.length > 2"
+        (click)="newPoll.options.splice(i, 1)"
+        class="btn btn-danger"
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+  <button (click)="addOption()" class="btn btn-secondary me-3">Add Another Option</button>
+  <button (click)="createPoll()" class="btn btn-primary">Create Poll</button>
+  <h2 class="text-center fw-bold mb-5 text-primary mt-5">Available Polls</h2>
+
+  <div class="row g-4">
+    <div class="col-md-6" *ngFor="let poll of polls">
+      <div class="card shadow-sm border-0 poll-card h-100">
+        <div class="card-body">
+          <!-- Question -->
+          <h5 class="card-title fw-bold text-dark mb-3">
+            {{ poll.questions }}
+          </h5>
+
+          
+
+          <div class="d-flex flex-column gap-2">
+            <button
+              *ngFor="let option of poll.options; let i = index"
+              (click)="vote(poll.id, i)"
+              class="btn btn-light border option-btn text-start d-flex justify-content-between align-items-center"
+              [class.btn-outline-success]="false"
+              role="button"
+            >
+              <span>{{ option.optionText }}</span>
+
+              <span class="badge bg-primary rounded-pill"> {{ option.voteCount }} votes </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

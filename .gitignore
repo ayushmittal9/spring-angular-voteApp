@@ -1,0 +1,22 @@
+# ================== Angular Frontend ==================
+frontend/poll-app/node_modules/
+frontend/poll-app/dist/
+frontend/poll-app/.angular/
+frontend/poll-app/.env
+frontend/poll-app/.vscode/
+frontend/poll-app/*.log
+
+# ================== Spring Boot Backend ==================
+backend/Voting/target/
+backend/Voting/.mvn/
+backend/Voting/mvnw
+backend/Voting/mvnw.cmd
+backend/Voting/*.jar
+backend/Voting/*.log
+
+# ================== General ==================
+.DS_Store
+Thumbs.db
+*.class
+.env
+*.log
